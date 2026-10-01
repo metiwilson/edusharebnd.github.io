@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#6366f1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="format-detection" content="telephone=no">
+<title>لینک درس‌ها | دانشگاه آزاد بندرعباس</title>
+<meta name="description" content="مرجع گروه‌ها و کانال‌های درسی دانشگاه آزاد بندرعباس — ورود مستقیم به گروه‌های درسی">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/dena-font@master/dist/font-face.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.3/Vazirmatn-font-face.css">
+
+<style>
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+:root {
+  /* Colors */
+  --bg: #f4f6fc;
+  --bg-2: #eef1f9;
+  --card: #ffffff;
+  --text: #1a2044;
+  --text-2: #4c5578;
+  --muted: #9099b8;
+  --border: #e7eaf5;
+  --border-soft: #f1f3fa;
+  --brand: #6366f1;
+  --brand-2: #8b5cf6;
+  --brand-soft: #eef0ff;
+  --accent: #ec4899;
+
+  /* Radius — مقادیر fluid */
+  --r-xs: 8px;
+  --r-sm: 10px;
+  --r: clamp(12px, 1.2vw, 14px);
+  --r-lg: clamp(14px, 1.4vw, 18px);
+  --r-xl: clamp(18px, 1.8vw, 24px);
+
+  /* Shadows */
+  --sh-sm: 0 1px 2px rgba(26,32,68,.04), 0 1px 3px rgba(26,32,68,.03);
+  --sh:    0 4px 12px -4px rgba(26,32,68,.08), 0 2px 6px -2px rgba(26,32,68,.04);
+  --sh-lg: 0 16px 36px -12px rgba(99,102,241,.22), 0 6px 16px -6px rgba(26,32,68,.06);
+
+  /* Header height — fluid */
+  --header-h: 60px;
+
+  /* Fluid spacing */
+  --pad-x: clamp(12px, 3vw, 24px);
+  --gap: clamp(10px, 1.2vw, 16px);
+}
+
+@media (min-width: 640px) {
+  :root { --header-h: 64px; }
+}
+
+@media (min-width: 1024px) {
+  :root { --header-h: 68px; }
+}
+
+body {
+  font-family: 'Dena', 'Vazirmatn', 'Segoe UI', Tahoma, sans-serif;
+  background: var(--bg);
+  background-image:
+    radial-gradient(ellipse 70% 45% at 50% -10%, rgba(99,102,241,.18), transparent 60%),
+    radial-gradient(ellipse 45% 30% at 0% 30%,  rgba(236,72,153,.08), transparent 60%),
+    radial-gradient(ellipse 45% 30% at 100% 60%, rgba(59,130,246,.08), transparent 60%);
+  background-attachment: fixed;
+  color: var(--text);
+  font-size: clamp(13.5px, 1.05vw + 10px, 15px);
+  line-height: 1.75;
+  min-height: 100vh;
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  position: relative;
+}
+
+@media (max-width: 640px) {
+  body { background-attachment: scroll; }
+}
+
+a { color: inherit; text-decoration: none; }
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+  touch-action: manipulation;
+}
+input { font-family: inherit; }
+img, svg { display: block; max-width: 100%; }
+::selection { background: var(--brand); color: #fff; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: #cdd3e6;
+  border-radius: 99px;
+  border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+/* Container — fluid */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+}
+
+@media (min-width: 1440px) {
+  .container { max-width: 1520px; }
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--header-h);
+  background: rgba(255,255,255,.85);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid var(--border);
+  transition: height .2s;
+}
+
+.header-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1.5vw, 14px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1.2vw, 12px);
+  min-width: 0;
+  flex-shrink: 1;
+}
+
+.brand-logo {
+  width: clamp(36px, 4.5vw, 44px);
+  height: clamp(36px, 4.5vw, 44px);
+  flex-shrink: 0;
+  border-radius: clamp(10px, 1.4vw, 13px);
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 55%, #ec4899 100%);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  box-shadow: 0 8px 18px -8px rgba(99,102,241,.7);
+}
+.brand-logo svg { width: 50%; height: 50%; }
+
+.brand-text { min-width: 0; }
+.brand-text h1 {
+  font-size: clamp(13.5px, 1.4vw, 16px);
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -.3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.brand-text p {
+  font-size: clamp(10px, 1vw, 11.5px);
+  color: var(--muted);
+  font-weight: 500;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header-spacer { flex: 1; }
+
+.header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 99px;
+  background: var(--brand-soft);
+  color: var(--brand);
+  font-size: 11.5px;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.header-badge svg { width: 13px; height: 13px; }
+
+@media (max-width: 560px) {
+  .header-badge { display: none; }
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  padding: clamp(22px, 4vw, 42px) 0 clamp(14px, 2.5vw, 24px);
+  text-align: center;
+}
+
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px 6px 12px;
+  border-radius: 99px;
+  background: #fff;
+  border: 1px solid var(--border);
+  box-shadow: var(--sh-sm);
+  font-size: clamp(11px, 1.1vw, 12.5px);
+  font-weight: 600;
+  color: var(--text-2);
+  margin-bottom: clamp(12px, 2vw, 18px);
+}
+.hero-pill .dot {
+  width: 7px; height: 7px;
+  border-radius: 99px;
+  background: #10b981;
+  box-shadow: 0 0 0 3px rgba(16,185,129,.18);
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(16,185,129,.18); }
+  50% { box-shadow: 0 0 0 6px rgba(16,185,129,.05); }
+}
+
+.hero h2 {
+  font-size: clamp(20px, 4.5vw, 38px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.4;
+  color: var(--text);
+  margin-bottom: clamp(8px, 1.5vw, 12px);
+}
+.hero h2 .grad {
+  background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 45%, #ec4899 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-desc {
+  font-size: clamp(12.5px, 1.1vw, 14px);
+  color: var(--muted);
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.9;
+  padding: 0 4px;
+}
+
+/* Stats */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(8px, 1.2vw, 12px);
+  margin-top: clamp(16px, 2.5vw, 24px);
+  max-width: 620px;
+  margin-inline: auto;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1vw, 12px);
+  padding: clamp(10px, 1.3vw, 14px) clamp(10px, 1.3vw, 16px);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  box-shadow: var(--sh-sm);
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+  min-width: 0;
+}
+.stat-card:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--brand) 25%, var(--border));
+  box-shadow: var(--sh);
+}
+
+.stat-ico {
+  width: clamp(30px, 3.6vw, 38px);
+  height: clamp(30px, 3.6vw, 38px);
+  flex-shrink: 0;
+  border-radius: clamp(8px, 1vw, 11px);
+  display: grid;
+  place-items: center;
+  font-size: clamp(14px, 1.7vw, 18px);
+}
+.stat-ico.i-1 { background: linear-gradient(135deg, #e0e7ff, #c7d2fe); }
+.stat-ico.i-2 { background: linear-gradient(135deg, #fce7f3, #fbcfe8); }
+.stat-ico.i-3 { background: linear-gradient(135deg, #d1fae5, #a7f3d0); }
+
+.stat-info { min-width: 0; text-align: right; flex: 1; }
+.stat-num {
+  font-size: clamp(15px, 1.7vw, 20px);
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.2;
+  letter-spacing: -.5px;
+  white-space: nowrap;
+}
+.stat-label {
+  font-size: clamp(9.5px, .9vw, 11.5px);
+  color: var(--muted);
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* موبایل کوچک */
+@media (max-width: 380px) {
+  .stat-card { flex-direction: column; gap: 4px; text-align: center; padding: 10px 6px; }
+  .stat-info { text-align: center; }
+  .stat-ico { width: 28px; height: 28px; font-size: 13px; }
+  .stat-num { font-size: 15px; }
+  .stat-label { font-size: 9.5px; }
+}
+
+/* ============================================================
+   STICKY SEARCH + CHIPS
+   ============================================================ */
+.sticky-bar {
+  position: sticky;
+  top: var(--header-h);
+  z-index: 40;
+  padding: clamp(10px, 1.5vw, 14px) 0 clamp(6px, 1vw, 10px);
+  background: linear-gradient(to bottom, var(--bg) 55%, color-mix(in srgb, var(--bg) 65%, transparent));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.search-box {
+  position: relative;
+  width: 100%;
+}
+.search-box > svg {
+  position: absolute;
+  right: clamp(12px, 1.5vw, 16px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(16px, 1.5vw, 18px);
+  height: clamp(16px, 1.5vw, 18px);
+  color: var(--muted);
+  pointer-events: none;
+}
+
+#search {
+  width: 100%;
+  padding: clamp(11px, 1.3vw, 14px) clamp(42px, 4vw, 50px) clamp(11px, 1.3vw, 14px) clamp(40px, 3.8vw, 46px);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r);
+  background: var(--card);
+  color: var(--text);
+  font-size: clamp(13px, 1.1vw, 14.5px);
+  font-weight: 500;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+  box-shadow: var(--sh-sm);
+  -webkit-appearance: none;
+  appearance: none;
+}
+#search::placeholder { color: var(--muted); font-weight: 400; }
+#search:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand) 14%, transparent);
+}
+#search::-webkit-search-cancel-button,
+#search::-webkit-search-decoration { display: none; }
+
+#clearBtn {
+  position: absolute;
+  left: clamp(8px, 1vw, 10px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  display: none;
+  place-items: center;
+  background: var(--border-soft);
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1;
+  transition: .2s;
+}
+#clearBtn.on { display: grid; }
+#clearBtn:hover { color: #ef4444; background: #fee2e2; }
+
+/* Chips — اسکرول افقی بهتر */
+.chips {
+  display: flex;
+  gap: clamp(6px, .8vw, 8px);
+  overflow-x: auto;
+  padding: 10px 2px 6px;
+  margin: 0 calc(var(--pad-x) * -1);
+  padding-inline: var(--pad-x);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+}
+.chips::-webkit-scrollbar { display: none; }
+
+.chip {
+  flex-shrink: 0;
+  padding: clamp(6px, .9vw, 8px) clamp(11px, 1.4vw, 15px);
+  border-radius: 99px;
+  border: 1.5px solid var(--border);
+  background: var(--card);
+  color: var(--text-2);
+  font-size: clamp(11.5px, 1vw, 13px);
+  font-weight: 600;
+  white-space: nowrap;
+  transition: .2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  scroll-snap-align: start;
+}
+.chip:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+  transform: translateY(-1px);
+}
+.chip:active { transform: scale(.97); }
+.chip.active {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 6px 14px -6px rgba(99,102,241,.65);
+}
+.chip .cnt {
+  font-size: clamp(9.5px, .8vw, 11px);
+  padding: 0 6px;
+  border-radius: 99px;
+  background: color-mix(in srgb, currentColor 12%, transparent);
+  font-weight: 600;
+  opacity: .85;
+}
+.chip.active .cnt { background: rgba(255,255,255,.22); opacity: 1; }
+
+/* ============================================================
+   SECTION HEADER
+   ============================================================ */
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.2vw, 14px);
+  padding: clamp(16px, 2vw, 22px) 0 clamp(10px, 1.5vw, 16px);
+}
+
+.section-ico {
+  width: clamp(34px, 3.6vw, 40px);
+  height: clamp(34px, 3.6vw, 40px);
+  flex-shrink: 0;
+  border-radius: clamp(10px, 1vw, 12px);
+  background: linear-gradient(135deg, #eef0ff, #e0e7ff);
+  display: grid;
+  place-items: center;
+  color: var(--brand);
+}
+.section-ico svg { width: 50%; height: 50%; }
+
+.section-title { min-width: 0; flex: 1; }
+.section-title h3 {
+  font-size: clamp(14.5px, 1.3vw, 17px);
+  font-weight: 800;
+  letter-spacing: -.3px;
+  line-height: 1.4;
+}
+.section-title p {
+  font-size: clamp(11px, .95vw, 12.5px);
+  color: var(--muted);
+  font-weight: 500;
+  line-height: 1.5;
+  margin-top: 1px;
+}
+
+/* ============================================================
+   POSTS GRID — کاملاً ریسپانسیو
+   ============================================================ */
+.posts-wrap { padding: 4px 0 60px; }
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+}
+
+/* موبایل بزرگ 480+ → همچنان تک‌ستونه */
+@media (min-width: 560px) {
+  .posts-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* تبلت 768+ */
+@media (min-width: 900px) {
+  .posts-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* لپ‌تاپ 1200+ */
+@media (min-width: 1200px) {
+  .posts-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+/* دسکتاپ بزرگ 1440+ */
+@media (min-width: 1440px) {
+  .posts-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+}
+
+/* ============================================================
+   POST CARD
+   ============================================================ */
+.post {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: clamp(13px, 1.4vw, 18px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.1vw, 14px);
+  box-shadow: var(--sh-sm);
+  transition: transform .25s cubic-bezier(.2,.8,.3,1), box-shadow .25s, border-color .25s;
+  overflow: hidden;
+  animation: rise .4s cubic-bezier(.2,.8,.3,1) backwards;
+  min-width: 0;
+  height: 100%;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.post::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--pg, linear-gradient(90deg, var(--brand), var(--brand-2)));
+  opacity: 0;
+  transition: opacity .25s;
+}
+
+.post:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--pc, var(--brand)) 22%, var(--border));
+  box-shadow: var(--sh-lg);
+}
+.post:hover::before { opacity: 1; }
+
+/* Post top */
+.post-top {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(10px, 1.1vw, 13px);
+  min-width: 0;
+}
+
+.post-ico {
+  width: clamp(38px, 4vw, 46px);
+  height: clamp(38px, 4vw, 46px);
+  flex-shrink: 0;
+  border-radius: clamp(11px, 1.1vw, 14px);
+  display: grid;
+  place-items: center;
+  background: var(--pg, linear-gradient(135deg, #818cf8, #6366f1));
+  color: #fff;
+  font-weight: 800;
+  font-size: clamp(16px, 1.8vw, 20px);
+  font-family: 'Dena', 'Vazirmatn', sans-serif;
+  box-shadow: 0 8px 18px -8px var(--pc, rgba(99,102,241,.7));
+  position: relative;
+  overflow: hidden;
+}
+.post-ico::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,.2), transparent 50%);
+  pointer-events: none;
+}
+
+.post-head-text { flex: 1; min-width: 0; }
+
+.post-platform {
+  font-size: clamp(9.5px, .9vw, 11px);
+  font-weight: 700;
+  color: var(--pc, var(--brand));
+  letter-spacing: .3px;
+  line-height: 1.4;
+  margin-bottom: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.post-platform::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 99px;
+  background: var(--pc, var(--brand));
+  flex-shrink: 0;
+}
+
+.post-title {
+  font-size: clamp(13px, 1.2vw, 15px);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.5;
+  letter-spacing: -.2px;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+
+.post-sub {
+  font-size: clamp(11.5px, 1vw, 13px);
+  color: var(--muted);
+  font-weight: 500;
+  line-height: 1.7;
+  margin-top: 3px;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* Tags */
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.post-tag {
+  font-size: clamp(9.5px, .85vw, 11px);
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 7px;
+  background: var(--border-soft);
+  color: var(--text-2);
+  border: 1px solid var(--border);
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+/* Actions */
+.post-actions {
+  display: flex;
+  gap: clamp(6px, .8vw, 8px);
+  margin-top: auto;
+  padding-top: clamp(10px, 1.1vw, 13px);
+  border-top: 1px dashed var(--border);
+}
+
+.enter-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: clamp(9px, 1vw, 11px) clamp(12px, 1.3vw, 16px);
+  border-radius: 11px;
+  background: var(--pg, linear-gradient(135deg, #6366f1, #8b5cf6));
+  color: #fff;
+  font-size: clamp(11.5px, 1vw, 13px);
+  font-weight: 700;
+  transition: transform .2s, filter .2s, box-shadow .2s;
+  box-shadow: 0 6px 14px -6px var(--pc, rgba(99,102,241,.6));
+  min-width: 0;
+}
+.enter-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+}
+.enter-btn:active { transform: translateY(0) scale(.98); }
+.enter-btn svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  transition: transform .2s;
+}
+.enter-btn:hover svg { transform: translateX(-3px); }
+.enter-btn span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.copy-btn {
+  width: clamp(36px, 3.6vw, 42px);
+  flex-shrink: 0;
+  border-radius: 11px;
+  border: 1.5px solid var(--border);
+  background: var(--card);
+  color: var(--muted);
+  display: grid;
+  place-items: center;
+  transition: .2s;
+}
+.copy-btn:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+  background: var(--brand-soft);
+}
+.copy-btn.ok {
+  border-color: #10b981;
+  color: #10b981;
+  background: #d1fae5;
+}
+.copy-btn svg { width: 15px; height: 15px; }
+
+/* موبایل خیلی کوچک */
+@media (max-width: 360px) {
+  .post { padding: 12px; gap: 10px; }
+  .post-title { font-size: 12.5px; }
+  .post-sub { font-size: 11px; }
+  .enter-btn span { display: none; }
+  .enter-btn { padding: 9px; }
+  .enter-btn svg { width: 16px; height: 16px; }
+}
+
+/* Platform colors */
+.p-rubika   { --pc: #8b5cf6; --pg: linear-gradient(135deg, #a78bfa, #7c3aed); }
+.p-bale     { --pc: #0284c7; --pg: linear-gradient(135deg, #38bdf8, #0284c7); }
+.p-telegram { --pc: #1c8cc9; --pg: linear-gradient(135deg, #4fc3f7, #1c8cc9); }
+.p-whatsapp { --pc: #16a34a; --pg: linear-gradient(135deg, #4ade80, #16a34a); }
+.p-eitaa    { --pc: #d97706; --pg: linear-gradient(135deg, #fbbf24, #d97706); }
+.p-soroush  { --pc: #0f766e; --pg: linear-gradient(135deg, #2dd4bf, #0f766e); }
+.p-igap     { --pc: #db2777; --pg: linear-gradient(135deg, #f472b6, #db2777); }
+.p-other    { --pc: #6366f1; --pg: linear-gradient(135deg, #818cf8, #6366f1); }
+
+/* ============================================================
+   EMPTY STATE
+   ============================================================ */
+.empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: clamp(40px, 8vw, 80px) 20px;
+  color: var(--muted);
+}
+.empty-ico {
+  width: clamp(56px, 7vw, 72px);
+  height: clamp(56px, 7vw, 72px);
+  margin: 0 auto 14px;
+  border-radius: 20px;
+  background: var(--border-soft);
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+}
+.empty-ico svg { width: 45%; height: 45%; }
+.empty h3 {
+  font-size: clamp(14px, 1.2vw, 16px);
+  font-weight: 700;
+  color: var(--text-2);
+  margin-bottom: 5px;
+}
+.empty p { font-size: clamp(12px, 1vw, 13.5px); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  margin-top: 20px;
+  padding: clamp(22px, 3vw, 34px) 0 clamp(28px, 3.5vw, 40px);
+  border-top: 1px solid var(--border);
+  background: rgba(255,255,255,.5);
+  text-align: center;
+}
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(12px, 1.5vw, 16px);
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(6px, .9vw, 10px);
+}
+.footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: clamp(7px, .9vw, 9px) clamp(11px, 1.3vw, 15px);
+  border-radius: 11px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  font-size: clamp(11px, 1vw, 12.5px);
+  font-weight: 600;
+  color: var(--text-2);
+  transition: .2s;
+}
+.footer-link:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+  transform: translateY(-2px);
+  box-shadow: var(--sh-sm);
+}
+.footer-link .fdot {
+  width: 7px; height: 7px;
+  border-radius: 99px;
+  background: var(--brand);
+  flex-shrink: 0;
+}
+
+.footer-note {
+  font-size: clamp(10.5px, .95vw, 12px);
+  color: var(--muted);
+  line-height: 2;
+  max-width: 500px;
+  padding: 0 4px;
+}
+.footer-note b { color: var(--text-2); font-weight: 700; }
+
+/* ============================================================
+   TOAST
+   ============================================================ */
+#toast {
+  position: fixed;
+  bottom: clamp(16px, 2.5vw, 24px);
+  left: 50%;
+  transform: translate(-50%, 200%);
+  background: #1a2044;
+  color: #fff;
+  padding: clamp(10px, 1vw, 12px) clamp(16px, 1.8vw, 22px);
+  border-radius: 13px;
+  font-size: clamp(12px, 1vw, 13.5px);
+  font-weight: 600;
+  z-index: 100;
+  box-shadow: 0 18px 40px -12px rgba(0,0,0,.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform .32s cubic-bezier(.2,.8,.3,1);
+  max-width: calc(100vw - 24px);
+  pointer-events: none;
+}
+#toast.on { transform: translate(-50%, 0); }
+#toast svg {
+  width: 16px;
+  height: 16px;
+  color: #34d399;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+@media print {
+  .site-header, .sticky-bar, .copy-btn, #toast, .site-footer { display: none !important; }
+  .post { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }
+  body { background: #fff; }
+  .posts-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}
+
+/* ============================================================
+   LANDSCAPE موبایل (ارتفاع کم)
+   ============================================================ */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero { padding: 16px 0 10px; }
+  .hero h2 { font-size: 20px; }
+  .stats-row { display: none; }
+}
+
+/* ============================================================
+   TOUCH DEVICES — حذف hover اثر
+   ============================================================ */
+@media (hover: none) {
+  .post:hover { transform: none; box-shadow: var(--sh-sm); }
+  .stat-card:hover { transform: none; }
+  .chip:hover { transform: none; }
+  .enter-btn:hover { transform: none; }
+  .footer-link:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ==================== HEADER ==================== -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#" aria-label="لینک درس‌ها">
+      <div class="brand-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <h1>لینک درس‌ها</h1>
+        <p>دانشگاه آزاد بندرعباس</p>
+      </div>
+    </a>
+    <div class="header-spacer"></div>
+    <div class="header-badge" aria-label="تعداد گروه‌های فعال">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+        <circle cx="12" cy="12" r="4"/>
+      </svg>
+      <span id="headerCount">—</span> گروه فعال
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-pill">
+        <span class="dot"></span>
+        <span>مرجع گروه‌های درسی</span>
+      </div>
+      <h2>
+        همه‌ی گروه‌ها و کانال‌ها<br>
+        <span class="grad">در یک‌جا</span>
+      </h2>
+      <p class="hero-desc">
+        لینک گروه‌های روبیکا، بله، تلگرام، واتساپ، ایتا و iGap — کافیست جست‌وجو کنی و مستقیم وارد شی.
+      </p>
+
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-ico i-1">📚</div>
+          <div class="stat-info">
+            <div class="stat-num" id="statTotal">۰</div>
+            <div class="stat-label">گروه و کانال</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-ico i-2">🏷️</div>
+          <div class="stat-info">
+            <div class="stat-num" id="statCats">۰</div>
+            <div class="stat-label">دسته‌بندی</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-ico i-3">💬</div>
+          <div class="stat-info">
+            <div class="stat-num" id="statPlats">۰</div>
+            <div class="stat-label">پیام‌رسان</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STICKY SEARCH ==================== -->
+  <div class="sticky-bar">
+    <div class="container">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+          <circle cx="11" cy="11" r="7"/>
+          <path d="M21 21l-4.35-4.35"/>
+        </svg>
+        <input id="search" type="search" placeholder="جست‌وجوی درس، استاد یا رشته…" autocomplete="off" inputmode="search" enterkeyhint="search">
+        <button id="clearBtn" aria-label="پاک کردن">✕</button>
+      </div>
+      <div class="chips" id="chips" role="tablist"></div>
+    </div>
+  </div>
+
+  <!-- ==================== POSTS ==================== -->
+  <section class="posts-wrap">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <div class="section-title">
+          <h3>گروه‌ها و کانال‌ها</h3>
+          <p id="countInfo">در حال بارگذاری…</p>
+        </div>
+      </div>
+
+      <div class="posts-grid" id="posts"></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="site-footer">
+  <div class="container footer-content">
+    <div class="footer-links">
+      <a class="footer-link" href="https://t.me/daneshgah_azad0" target="_blank" rel="noopener">
+        <span class="fdot" style="background:#2aabee"></span>گروه تلگرام
+      </a>
+      <a class="footer-link" href="https://chat.whatsapp.com/LmRuoZDyXOf7oV5sTeDrmc" target="_blank" rel="noopener">
+        <span class="fdot" style="background:#25d366"></span>گروه واتساپ
+      </a>
+      <a class="footer-link" href="https://rubika.ir/joing/JJEJJIDE0XSLWUJEKTAQESLMRDHEFNGW" target="_blank" rel="noopener">
+        <span class="fdot" style="background:#8b5cf6"></span>گفتگو روبیکا
+      </a>
+    </div>
+    <div class="footer-note">
+      <b>لینک درس‌ها — دانشگاه آزاد بندرعباس</b><br>
+      این صفحه صرفاً جمع‌آوری لینک‌های اعلام‌شده توسط دانشجویان است
+    </div>
+  </div>
+</footer>
+
+<!-- ==================== TOAST ==================== -->
+<div id="toast" role="status" aria-live="polite">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 6L9 17l-5-5"/>
+  </svg>
+  <span id="toastText">لینک کپی شد</span>
+</div>
+
+<!-- ==================== DATA + LOGIC ==================== -->
+<script src="data.js"></script>
+<script>
+/* ============================================================
+   پلتفرم‌ها
+   ============================================================ */
+const PLATFORMS = {
+  rubika:   { label: 'روبیکا',  short: 'ر', cls: 'p-rubika'   },
+  bale:     { label: 'بله',     short: 'ب', cls: 'p-bale'     },
+  telegram: { label: 'تلگرام',  short: 'ت', cls: 'p-telegram' },
+  whatsapp: { label: 'واتساپ',  short: 'و', cls: 'p-whatsapp' },
+  eitaa:    { label: 'ایتا',    short: 'ا', cls: 'p-eitaa'    },
+  soroush:  { label: 'سروش',    short: 'س', cls: 'p-soroush'  },
+  igap:     { label: 'iGap',    short: 'G', cls: 'p-igap'     },
+  other:    { label: 'لینک',    short: '↗', cls: 'p-other'    }
+};
+
+const ICON_ENTER = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>`;
+const ICON_COPY  = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
+
+const $ = s => document.querySelector(s);
+const state = { q: '', cat: 'all' };
+
+/* ============================================================
+   ابزار
+   ============================================================ */
+const esc = s => String(s ?? '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+
+const norm = s => String(s ?? '').toLowerCase()
+  .replace(/[يﻯﻰ]/g, 'ی')
+  .replace(/ك/g, 'ک')
+  .replace(/[ۀهٔ]/g, 'ه')
+  .replace(/[\u064B-\u0652\u0670\u200c]/g, '')
+  .replace(/[أإآا]/g, 'ا')
+  .replace(/\s+/g, ' ')
+  .trim();
+
+const faNum = n => String(n).replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
+
+/* ============================================================
+   چیپ‌ها
+   ============================================================ */
+function buildChips() {
+  const counts = {};
+  POSTS.forEach(p => { if (p.category) counts[p.category] = (counts[p.category] || 0) + 1; });
+  const cats = Object.keys(counts);
+
+  $('#chips').innerHTML =
+    `<button class="chip ${state.cat === 'all' ? 'active' : ''}" data-cat="all" role="tab">همه <span class="cnt">${faNum(POSTS.length)}</span></button>` +
+    cats.map(c =>
+      `<button class="chip ${state.cat === c ? 'active' : ''}" data-cat="${esc(c)}" role="tab">${esc(c)} <span class="cnt">${faNum(counts[c])}</span></button>`
+    ).join('');
+
+  $('#chips').querySelectorAll('.chip').forEach(btn => {
+    btn.onclick = () => {
+      state.cat = btn.dataset.cat;
+      $('#chips').querySelectorAll('.chip').forEach(x => x.classList.remove('active'));
+      btn.classList.add('active');
+      // اسکرول چیپ فعال به وسط در موبایل
+      btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      render();
+    };
+  });
+}
+
+/* ============================================================
+   رندر پست‌ها
+   ============================================================ */
+function render() {
+  const q = norm(state.q);
+  const list = POSTS.filter(p => {
+    if (state.cat !== 'all' && p.category !== state.cat) return false;
+    if (q) {
+      const hay = norm([p.title, p.subtitle, p.category, (p.tags || []).join(' '), p.platform].join(' '));
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+
+  const box = $('#posts');
+
+  if (!list.length) {
+    box.innerHTML = `
+      <div class="empty">
+        <div class="empty-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <circle cx="11" cy="11" r="7"/>
+            <path d="M21 21l-4.35-4.35"/>
+            <path d="M8 11h6"/>
+          </svg>
+        </div>
+        <h3>چیزی پیدا نشد</h3>
+        <p>عبارت دیگری را جست‌وجو کن یا فیلتر را تغییر بده.</p>
+      </div>`;
+    $('#countInfo').textContent = 'نتیجه‌ای یافت نشد';
+    return;
+  }
+
+  box.innerHTML = list.map((p, i) => {
+    const meta = PLATFORMS[p.platform] || PLATFORMS.other;
+    const tags = (p.tags || []).map(t => `<span class="post-tag">#${esc(t)}</span>`).join('');
+    const isTel = p.url && p.url.startsWith('tel:');
+    const btnLabel = isTel ? 'تماس' : `ورود به ${meta.label}`;
+
+    return `
+      <article class="post ${meta.cls}" style="animation-delay:${Math.min(i * 15, 400)}ms">
+        <div class="post-top">
+          <div class="post-ico" aria-hidden="true">${esc(meta.short)}</div>
+          <div class="post-head-text">
+            <div class="post-platform">${esc(meta.label)}</div>
+            <h3 class="post-title">${esc(p.title)}</h3>
+            ${p.subtitle ? `<p class="post-sub">${esc(p.subtitle)}</p>` : ''}
+          </div>
+        </div>
+        ${tags ? `<div class="post-tags">${tags}</div>` : ''}
+        <div class="post-actions">
+          <a class="enter-btn" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(btnLabel)}">
+            ${ICON_ENTER}
+            <span>${esc(btnLabel)}</span>
+          </a>
+          <button class="copy-btn" data-copy="${esc(p.url)}" aria-label="کپی لینک" title="کپی لینک">
+            ${ICON_COPY}
+          </button>
+        </div>
+      </article>`;
+  }).join('');
+
+  $('#countInfo').textContent = `${faNum(list.length)} مورد از ${faNum(POSTS.length)} مورد`;
+
+  // Copy buttons
+  box.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.onclick = async () => {
+      const url = btn.dataset.copy;
+      try {
+        await navigator.clipboard.writeText(url);
+      } catch {
+        const ta = document.createElement('textarea');
+        ta.value = url;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        ta.remove();
+      }
+      btn.classList.add('ok');
+      showToast('لینک کپی شد ✓');
+      setTimeout(() => btn.classList.remove('ok'), 1300);
+    };
+  });
+}
+
+/* ============================================================
+   توست
+   ============================================================ */
+let toastTimer;
+function showToast(msg) {
+  $('#toastText').textContent = msg;
+  const t = $('#toast');
+  t.classList.add('on');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('on'), 1700);
+}
+
+/* ============================================================
+   جست‌وجو
+   ============================================================ */
+const searchInput = $('#search');
+let searchTimer;
+
+searchInput.addEventListener('input', () => {
+  $('#clearBtn').classList.toggle('on', !!searchInput.value);
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => {
+    state.q = searchInput.value;
+    render();
+  }, 140);
+});
+
+$('#clearBtn').onclick = () => {
+  searchInput.value = '';
+  state.q = '';
+  $('#clearBtn').classList.remove('on');
+  render();
+  searchInput.focus();
+};
+
+/* ============================================================
+   آمار
+   ============================================================ */
+function animateStats() {
+  const total = POSTS.length;
+  const cats  = new Set(POSTS.map(p => p.category).filter(Boolean)).size;
+  const plats = new Set(POSTS.map(p => p.platform)).size;
+
+  const items = [
+    { el: $('#statTotal'), val: total },
+    { el: $('#statCats'),  val: cats  },
+    { el: $('#statPlats'), val: plats }
+  ];
+
+  items.forEach(({ el, val }) => {
+    let cur = 0;
+    const step = Math.max(1, Math.round(val / 26));
+    const timer = setInterval(() => {
+      cur += step;
+      if (cur >= val) { cur = val; clearInterval(timer); }
+      el.textContent = faNum(cur);
+    }, 30);
+  });
+
+  $('#headerCount').textContent = faNum(total);
+}
+
+/* ============================================================
+   راه‌اندازی
+   ============================================================ */
+buildChips();
+render();
+animateStats();
+
+// Ctrl+K برای جست‌وجو
+document.addEventListener('keydown', e => {
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+    e.preventDefault();
+    searchInput.focus();
+    searchInput.select();
+  }
+  if (e.key === 'Escape' && document.activeElement === searchInput) {
+    searchInput.value = '';
+    state.q = '';
+    render();
+    $('#clearBtn').classList.remove('on');
+  }
+});
+
+// اسکرول چیپ فعال به مرکز در ابتدا
+window.addEventListener('load', () => {
+  const active = $('#chips').querySelector('.chip.active');
+  if (active) active.scrollIntoView({ inline: 'center', block: 'nearest' });
+});
+
+console.log('%c لینک درس‌ها — دانشگاه آزاد بندرعباس ',
+  'background:linear-gradient(90deg,#6366f1,#ec4899);color:#fff;padding:6px 14px;border-radius:8px;font-family:Dena,sans-serif;font-size:13px;font-weight:bold');
+console.log('تعداد گروه‌ها:', POSTS.length);
+</script>
+</body>
+</html>
